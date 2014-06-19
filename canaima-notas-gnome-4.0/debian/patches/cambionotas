@@ -1,0 +1,88 @@
+Description: Se cambio las notas de canaima
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ canaima-notas-gnome (4.0-13) stable; urgency=low
+ .
+   * [6e3044f] Comando lspci -nn , Todos los CheckButton True
+Author: Carlos Espinoza <carlosarmikhael@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- canaima-notas-gnome-4.0.orig/canaima_notas_gnome.py
++++ canaima-notas-gnome-4.0/canaima_notas_gnome.py
+@@ -72,9 +72,9 @@ class Main(gtk.Window):
+ 
+         # Identificación >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ 
+-        self.lbl_titulo = gtk.Label(_("Title:"))
+-        self.lbl_autor = gtk.Label(_("Author:"))
+-        self.lbl_correo = gtk.Label(_("Email:"))
++        self.lbl_titulo = gtk.Label(_("Nombre:"))
++        self.lbl_autor = gtk.Label(_("Dueño:"))
++        self.lbl_correo = gtk.Label(_("Correo:"))
+         
+         self.txt_titulo = gtk.Entry(20)
+         self.txt_autor = gtk.Entry(30)
+@@ -124,17 +124,17 @@ specific as possible):"))
+ 
+         self.check_lspci = gtk.CheckButton("PCI")
+         self.check_lspci.set_active(True)
+-        self.check_lsusb = gtk.CheckButton("USB")
++        self.check_lsusb = gtk.CheckButton("pentdrive")
+         self.check_lsusb.set_active(True)
+-        self.check_ram = gtk.CheckButton("RAM/SWAP/Buffers")
++        self.check_ram = gtk.CheckButton("Memoria de intercambio")
+         self.check_ram.set_active(True)
+-        self.check_df = gtk.CheckButton(_("Disk Space"))
++        self.check_df = gtk.CheckButton(_("Espacio de Disco"))
+         self.check_df.set_active(True)
+-        self.check_cpu = gtk.CheckButton("CPU")
++        self.check_cpu = gtk.CheckButton("Tipo CPU")
+         self.check_cpu.set_active(True)
+-        self.check_tm = gtk.CheckButton(_("Motherboard"))
++        self.check_tm = gtk.CheckButton(_("Tarjeta Madre"))
+         self.check_tm.set_active(True)
+-        self.check_all = gtk.CheckButton(_("Select All"))
++        self.check_all = gtk.CheckButton(_("Selecionar Todo"))
+         self.check_all.connect("toggled", self.selectalldis, "Todos")
+ 
+         self.check_all.set_active(False)
+@@ -150,17 +150,17 @@ specific as possible):"))
+         # Seccion de informaión del sistema
+         self.tabla1 = gtk.Table(4, 4, True)
+ 
+-        self.check_acelgraf = gtk.CheckButton(_("Graphics Acceleration"))
++        self.check_acelgraf = gtk.CheckButton(_("Acelerador de Video"))
+         self.check_acelgraf.set_active(True)
+-        self.check_xorg = gtk.CheckButton(_("Screen Server"))
++        self.check_xorg = gtk.CheckButton(_("Pantalla de Servidor"))
+         self.check_xorg.set_active(True)
+-        self.check_repo = gtk.CheckButton(_("Repositories"))
++        self.check_repo = gtk.CheckButton(_("Repositorios"))
+         self.check_repo.set_active(True)
+-        self.check_tpart = gtk.CheckButton(_("Partition table"))
++        self.check_tpart = gtk.CheckButton(_("Tabla de Particiones"))
+         self.check_tpart.set_active(True)
+-        self.check_prefe = gtk.CheckButton(_("Priority APT"))
++        self.check_prefe = gtk.CheckButton(_("Prioridad de APT"))
+         self.check_prefe.set_active(True)
+-        self.check_ired = gtk.CheckButton(_("Network Interfaces"))
++        self.check_ired = gtk.CheckButton(_("Interfas de Red"))
+         self.check_ired.set_active(True)
+         self.check_all2 = gtk.CheckButton(_("Select All"))
+         self.check_all2.connect("toggled", self.selectalldis2, "Todos")
